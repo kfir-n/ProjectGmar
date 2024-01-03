@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('image\Background2.jpg');
+    background-size: cover;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+ul a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 50px;
+
+}
+
+p {
+    font-size: 40px;
+    text-align: start;
+    color: #555;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+
