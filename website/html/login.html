@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <div class="logo-container"> <img src="../image/logo.png" ></div>
+            <a href="private area.html" class="private-link">
+                <i class='bx bxs-user'  alt="Anonymous Person"></i>
+          
+            </a>
+            <a href="gallery.html">Gallery</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="contact us.html">Contact us</a>
+            <a href="HomePage.html">Home</a>
+            <h1>Welcome to Knee-Care</h1>
+        </div>
+    </header> 
+    <div class="wrapper">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="email" id="email" placeholder="email" required>
+                <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+            <div class="remember-forget">
+                <label><input type="checkbox" id="rememberMe">remember me</label>
+                <a href="forgot password.html">Forgot password?</a>
+            </div>
+            <div class="register-link">
+                <p>Don't have an account? <a href="register.html">Register</a></p>
+            </div>
+            <button type="button" class="btn" onclick="login()">Login</button>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-check-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-storage-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database-compat.js"></script>
+      <script src="main.js"></script>
+ 
+</body>
+</html>
