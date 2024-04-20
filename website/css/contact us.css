@@ -1,0 +1,233 @@
+* {
+   margin: 0; /* Set margin to 0 for all elements */
+   padding: 0; /* Set padding to 0 for all elements */
+   box-sizing: border-box; /* Include padding and border in the element's total width and height */
+   font-family: "Poppins", sans-serif; /* Set default font family */
+ }
+
+ body {
+   background-image: url(../image/theBack.jpg); /* Set background image */
+   background-size: cover; /* Cover the entire background */
+   background-position: center; /* Center the background image */
+   background-attachment: fixed; /* Keep the background image fixed */
+   background-repeat: no-repeat; /* Do not repeat the background image */
+   position: relative; /* Set body position to relative */
+ }
+
+.top-menu {
+   display: flex; /* Display links in a flex container */
+   justify-content: flex-end; /* Align links to the right */
+ }
+ 
+ .p {
+   position: center; /* Set position to center */
+ }
+ 
+ .topnav .logo-container {
+ float: left; /* Float logo container to the left */
+ margin-right: 10px; /* Add margin to the right of logo container */
+ }
+ 
+ .topnav .logo-container img {
+ max-width: 53%; /* Set maximum width for logo */
+ height: 100%; /* Set height to 100% */
+ display: block; /* Display logo as block element */
+ }
+ 
+ .topnav {
+ background-color: #333; /* Set background color for top navigation */
+ overflow: hidden; /* Hide overflowing content */
+ height: 180px; /* Set height of top navigation */
+ }
+ 
+ .topnav h1 {
+ margin-top: 4rem; /* Set margin-top for h1 */
+ font-size: 60px; /* Set font size for h1 */
+ height: 10px; /* Set height for h1 */
+ color: #ddd; /* Set color for h1 */
+ text-align: center; /* Align text to center */
+ }
+ 
+ .topnav a {
+ float: right; /* Float links to the right */
+ color: #f2f2f2; /* Set color for links */
+ text-align: top; /* Align text to top */
+ padding: 14px 16px; /* Set padding for links */
+ text-decoration: none; /* Remove underline from links */
+ font-size: 35px; /* Set font size for links */
+ }
+ 
+ .topnav a:hover {
+ background-color: #ddd; /* Change background color on hover */
+ color: black; /* Change text color on hover */
+ }
+ 
+ .topnav a.active {
+ background-color: #04AA6D; /* Set background color for active/current link */
+ color: white; /* Set text color for active/current link */
+ }
+ 
+ .topnav a.register-link {
+   float: right; /* Float register link to the right */
+   color: #f2f2f2; /* Set color for register link */
+   text-align: top; /* Align text to top */
+   padding: 14px 16px; /* Set padding for register link */
+   text-decoration: none; /* Remove underline from register link */
+   font-size: 35px; /* Set font size for register link */
+   margin-right: 20px; /* Add margin to the right of register link */
+ }
+ 
+.topnav a.private-link {
+   float: right; /* Float private link to the right */
+   display: flex; /* Display as flex */
+   align-items: center; /* Align items vertically */
+   justify-content: center; /* Center items horizontally */
+   width: 75px; /* Set width */
+   height: 75px; /* Set height */
+   background-color: hsl(0, 0%, 100%); /* Set background color */
+   color: #fff; /* Set text color */
+   border-radius: 50%; /* Make border radius round */
+   text-decoration: none; /* Remove underline */
+   font-weight: bold; /* Set font weight */
+   margin-right: 10px;  /* Add margin to the right */
+ }
+ 
+ .topnav a.private-link:hover {
+   background-color: #ffffff; /* Change background color on hover */
+   color: #fff; /* Set text color on hover */
+ } 
+ 
+ .topnav a.private-link i{
+   color: #000; /* Set color for icon */
+ }
+ 
+ h1 {
+     margin-bottom:  0; /* Set margin-bottom to 0 for h1 */
+     font-size: 50px; /* Set font size for h1 */
+    text-align: left; /* Align text to left */
+    margin-bottom: 10px; /* Set bottom margin */
+ }
+ 
+ .p1, .p2, .p3, .p4, .p5{
+     text-align: left; /* Align text to left for specified classes */
+     font-size: 30px; /* Set font size for specified classes */
+ }
+ 
+.contact-container {
+    width: 80%; /* Set width */
+    margin-top: 650px; /* Set top margin */
+    position: absolute; /* Set position to absolute */
+    top: 50%; /* Set top to 50% */
+    left: 50%; /* Set left to 50% */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    z-index: 999; /* Ensure the contact container appears above other elements */
+  }
+
+.contact-box {
+    display: flex; /* Display contact box as flex */
+}
+
+.contact-left {
+    font-size: 45px; /* Set font size */
+    flex-basis: 60%; /* Set flex basis */
+    padding: 40px 60px; /* Set padding */
+    margin-top: 10px; /* Set top margin */
+    background-color: #ddd; /* Set background color */
+
+ }
+
+ .contact-left label {
+   margin-top: 20px; /* Set top margin for labels */
+ }
+
+ .contact-right {
+    font-size: 24px; /* Set font size */
+    color: #fff; /* Set text color */
+    flex-basis: 40%; /* Set flex basis */
+    padding: 40px; /* Set padding */
+    background-color: rgb(8, 8, 172); /* Set background color */
+    height: auto; /* Set height to auto */
+ }
+ 
+ .contact p {
+    margin-bottom: 40px; /* Set bottom margin */
+ }
+
+input-row {
+    display: flex; /* Display as flex */
+    justify-content: space-between; /* Space items evenly */
+    margin-bottom: 20px; /* Set bottom margin */
+ }
+
+ .input-row .input-group {
+    flex-basis: 45%; /* Set flex basis */
+ }
+
+ input {
+    width: 100%; /* Set width to 100% */
+    border: none; /* Remove border */
+    border-bottom: 1px solid #ccc; /* Add bottom border */
+    outline: none; /* Remove outline */
+    padding-bottom: 5px; /* Set bottom padding */
+ }
+
+ textarea {
+    width: 100%; /* Set width to 100% */
+    border: 1px solid #ccc; /* Add border */
+    outline: none; /* Remove outline */
+    padding: 10px; /* Set padding */
+    box-sizing: border-box; /* Include padding and border in total width */
+    font-size:24px; /* Set font size */
+ }
+
+ input[type="text"]
+{
+    font-size:24px; /* Set font size */
+}
+
+input[type="email"]
+{
+    font-size:24px; /* Set font size */
+}
+
+ label {
+    margin-bottom: 6px; /* Set bottom margin */
+    display: block; /* Display as block */
+    color: #1c00b5; /* Set color */
+    font-size: 24px; /* Set font size */
+ }
+
+ button {
+    background: #1c00b5; /* Set background color */
+    width: 100px; /* Set width */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    color: #fff; /* Set text color */
+    height: 35px; /* Set height */
+    cursor: pointer; /* Set cursor to pointer */
+    border-radius: 30px; /* Set border radius */
+    margin-top: 20px; /* Set top margin */
+    font-size: 24px; /* Set font size */
+}
+
+ .contact-left h3 {
+    color: #1c00b5; /* Set color */
+    font-weight: 600; /* Set font weight */
+    font-size: 50px; /* Set font size */
+    margin-bottom: 30px; /* Set bottom margin */
+ }
+
+ .contact-right h3 {
+    font-size: 45px; /* Set font size */
+    font-weight: 600; /* Set font weight */
+    margin-bottom: 30px; /* Set bottom margin */
+    color: white; /* Set text color */
+ }
+
+ tr td:first-child{
+    padding-right: 20px; /* Set padding-right */
+ }
+
+ tr td{
+    padding-top: 20px; /* Set padding-top */
+ }

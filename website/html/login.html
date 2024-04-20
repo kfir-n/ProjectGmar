@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Set character encoding for HTML document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Set viewport meta tag for responsive design -->
+    <title>login</title> <!-- Set title of the page -->
+    <link rel="stylesheet" type="text/css" href="/css/login.css"> <!-- Link to external CSS file -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Link to external CSS file for icons -->
+</head>
+<body>
+    <header>
+        <div class="topnav"> <!-- Top navigation section -->
+            <div class="logo-container"> <img src="../image/logo.png" ></div> <!-- Logo container -->
+            <a href="private area.html" class="private-link"> <!-- Link to private area -->
+                <i class='bx bxs-user'  alt="Anonymous Person"></i> <!-- Icon for anonymous user -->
+            </a>
+            <a href="gallery.html">Gallery</a> <!-- Link to gallery page -->
+            <a href="register.html">Register</a> <!-- Link to register page -->
+            <a href="login.html">Login</a> <!-- Link to login page -->
+            <a href="contact us.html">Contact us</a> <!-- Link to contact page -->
+            <a href="HomePage.html">Home</a> <!-- Link to home page -->
+         <!--   <h1>Welcome to Knee-Care</h1>  Heading for the page  -->
+        </div>
+    </header> 
+    <div class="wrapper"> <!-- Wrapper section -->
+            <h1>Login</h1> <!-- Heading for login -->
+            <div class="input-box"> <!-- Input box for email -->
+                <input type="email" id="email" placeholder="email" required> <!-- Email input field -->
+                <i class='bx bxs-envelope'></i> <!-- Icon for email -->
+            </div>
+            <div class="input-box"> <!-- Input box for password -->
+                <input type="password" id="password" placeholder="Password" required> <!-- Password input field -->
+                <i class='bx bxs-lock-alt' ></i> <!-- Icon for password -->
+            </div>
+            <div class="remember-forget"> <!-- Section for remember me and forgot password -->
+                <label><input type="checkbox" id="rememberMe">remember me</label> <!-- Checkbox for remember me -->
+                <a href="forgot password.html">Forgot password?</a> <!-- Link to forgot password page -->
+            </div>
+            <div class="register-link"> <!-- Section for register link -->
+                <p>Don't have an account? <a href="register.html">Register</a></p> <!-- Link to register page -->
+            </div>
+            <button type="button" class="btn" onclick="login()">Login</button> <!-- Button for login -->
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script> <!-- Script for Firebase app compatibility -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-check-compat.js"></script> <!-- Script for Firebase app check compatibility -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script> <!-- Script for Firebase authentication compatibility -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-storage-compat.js"></script> <!-- Script for Firebase storage compatibility -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database-compat.js"></script> <!-- Script for Firebase database compatibility -->
+    <script src="/JavaScript/login.js"></script> <!-- Main JavaScript file -->
+</body>
+</html>

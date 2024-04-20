@@ -1,0 +1,209 @@
+* {
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  box-sizing: border-box; /* Use border-box model for easier sizing */
+  font-family: "Poppins", sans-serif; /* Set default font family */
+}
+
+body {
+  background-image: url(../image/theBack.jpg); /* Set background image */
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background */
+  background-attachment: fixed; /* Fix the background position */
+  background-repeat: no-repeat; /* Do not repeat the background */
+  position: relative; /* Set position to relative */
+}
+
+.top-menu {
+  display: flex; /* Use flexbox for top menu layout */
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.p {
+  position: center; /* Center the position */
+}
+
+.topnav .logo-container {
+  float: left; /* Float the logo container to the left */
+  margin-right: 10px; /* Add right margin */
+}
+
+.topnav .logo-container img {
+  max-width: 53%; /* Set maximum width for logo */
+  height: 100%; /* Set height to 100% */
+  display: block; /* Display as block */
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333; /* Set background color */
+  overflow: hidden; /* Hide overflowing content */
+  height: 180px; /* Set height */
+}
+
+.topnav h1 {
+  margin-top: 4rem; /* Set top margin */
+  font-size: 60px; /* Set font size */
+  height: 10px; /* Set height */
+  color: #ddd; /* Set text color */
+  text-align: center; /* Align text to center */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right; /* Float links to the right */
+  color: #f2f2f2; /* Set text color */
+  text-align: top; /* Align text to the top */
+  padding: 14px 16px; /* Set padding */
+  text-decoration: none; /* Remove underline */
+  font-size: 35px; /* Set font size */
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd; /* Set background color on hover */
+  color: black; /* Change text color on hover */
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D; /* Set background color for active link */
+  color: white; /* Set text color for active link */
+}
+
+/* Styling for register link */
+.register-link p a{
+  text-decoration: none; /* Remove underline */
+  font-weight: 600; /* Set font weight */
+}
+
+.register-link p a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.topnav a.register-link {
+  float: right; /* Float the register link to the right */
+  color: #f2f2f2; /* Set text color */
+  text-align: top; /* Align text to the top */
+  padding: 14px 16px; /* Set padding */
+  text-decoration: none; /* Remove underline */
+  font-size: 35px; /* Set font size */
+  margin-right: 20px; /* Add right margin */
+}
+
+.topnav a.private-link {
+  float: right; /* Float the private link to the right */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Align items horizontally */
+  width: 75px; /* Set width */
+  height: 75px; /* Set height */
+  background-color: hsl(0, 0%, 100%); /* Set background color */
+  color: #fff; /* Set text color */
+  border-radius: 50%; /* Make it circular */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Set font weight */
+  margin-right: 10px;  /* Add right margin */
+}
+
+.topnav a.private-link:hover {
+  background-color: #ffffff; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+} 
+
+.topnav a.private-link i{
+  color: #000; /* Set icon color */
+}
+
+h1 {
+  margin-bottom: 0; /* Set margin-bottom to 0 for h1 */
+}
+
+.p1, .p2, .p3, .p4, .p5{
+  text-align: left; /* Align text to the left */
+  font-size: 30px; /* Set font size */
+}
+
+.wrapper {
+  margin: auto; /* Center the wrapper horizontally */
+  margin-top:100px; /* Set top margin */
+  width: 500px; /* Set width */
+  height: 400px; /* Set height */
+  background: transparent; /* Set background color */
+  border: 2px solid rgba(255, 255, 255, .2); /* Set border */
+  backdrop-filter: blur(20px); /* Apply backdrop filter */
+  box-shadow: 0 0 10px solid rgba(0, 0, 0, .2); /* Add box shadow */
+  color: black; /* Set text color */
+  border-radius: 10px; /* Set border radius */
+  padding: 30px 40px;  /* Set padding */
+ }
+
+ .wrapper h1 {
+  font-size: 36px; /* Set font size */
+  text-align: center; /* Align text to center */
+}
+
+.wrapper .input-box {
+  position: relative; /* Set position to relative */
+  width: 100%; /* Set width */
+  height: 50px; /* Set height */
+  margin: 30px 0; /* Set margin */
+}
+
+.input-box i {
+  position: absolute; /* Set position to absolute */
+  right: 20px; /* Set right position */
+  top: 50%; /* Set top position */
+  transform: translateY(-50%); /* Move up by 50% */
+  font-size: 20px; /* Set font size */
+}
+
+.input-box input {
+  width: 100%; /* Set width */
+  height: 100%; /* Set height */
+  background: transparent; /* Set background color */
+  border-radius: 40px; /* Set border radius */
+  padding: 20px 45px 20px 20px; /* Set padding */
+  font-size: 20px; /* Set font size */
+}
+
+.input-box input::placeholder {
+  color: black; /* Set placeholder color */
+  text-align: left; /* Align placeholder text to left */
+}
+
+.wrapper .remember-forget {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space items evenly */
+  font-size: 20px; /* Set font size */
+  margin: -15px 0 15px; /* Set margin */
+}
+
+.remember-forget label input {
+  margin-right: 3px; /* Set right margin */
+}
+
+.remember-forget a {
+  text-decoration: none; /* Remove underline */
+}
+
+.remember-forget a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.wrapper .btn {
+  width: 100%; /* Set width */
+  height: 45px; /* Set height */
+  background: white; /* Set background color */
+  border-radius: 40px; /* Set border radius */
+  cursor: pointer; /* Set cursor to pointer */
+  font-size: 20px; /* Set font size */
+  font-weight: 600; /* Set font weight */
+  margin-top: 20px; /* Set top margin */
+}
+
+.wrapper .register-link {
+  font-size: 20px; /* Set font size */
+  text-align: center; /* Align text to center */
+  margin-top: 20px; /* Set top margin */
+}
