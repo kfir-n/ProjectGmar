@@ -1,75 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="contact us.css"> 
-    <title>Contact us</title>
+    <meta charset="UTF-8"> <!-- Set document character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configure viewport settings for responsive design -->
+    <link rel="stylesheet" type="text/css" href="/css/contact us.css"> <!-- Link to external CSS file for styling -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Link to external CSS library for icons -->
+    <title>Contact us</title> <!-- Set document title -->
 </head>
 <body>
-    <header>
-        <div class="topnav">
-            <div class="logo-container"> <img src="/image/logo.png"></div>
-            <a href="homePage.html">about us</a>
-            <a href="register.html">register</a>
-            <a href="login.html"> login</a>
-            <h1>Contact us</h1>
+    <header> <!-- Header section -->
+        <div class="topnav"> <!-- Top navigation bar -->
+            <div class="logo-container"> <img src="../image/logo.png"></div> <!-- Logo container -->
+            <a href="private area.html" class="private-link"> <!-- Link to private area -->
+                <i class='bx bxs-user'  alt="Anonymous Person"></i> <!-- Icon for anonymous user -->
+            </a>
+            <a href="gallery.html">Gallery</a> <!-- Link to gallery page -->
+            <a href="register.html">Register</a> <!-- Link to register page -->
+            <a href="login.html">Login</a> <!-- Link to login page -->
+            <a href="contact us.html">Contact us</a> <!-- Link to contact us page (current page) -->
+            <a href="HomePage.html">Home</a> <!-- Link to home page -->
+            <h1>Welcom to Knee-Care</h1> <!-- Heading welcoming users to Knee-Care -->
         </div>
-        </header>
-        <div class="contact-container">
-        <h1>Connect with us</h1>
-        <p>we would love to respond to your queries and help you secceed.<br> 
-            Feel free to get in touch with us.</p>
-            <div class="contact-box">
-                 <div class="contact-left">
-                    <h3>Sent your request</h3>
-                    <form>
-                         <div class="input-row">
-                            <div class="input-group">
-                                <label>Name:</label>
-                                <input type="text" placeholder="John Doe">
-                            </div>
+    </header>
+    <div class="contact-container"> <!-- Container for contact section -->
+        <div class="contact-box"> <!-- Contact box containing contact form and contact details -->
+            <div class="contact-left"> <!-- Left section of contact box -->
+                <h3>Sent your request</h3> <!-- Heading for contact form -->
+                <form> <!-- Contact form -->
+                    <div class="input-row"> <!-- Input row for name -->
+                        <div class="input-group"> <!-- Input group for name -->
+                            <label>Name:</label> <!-- Label for name input -->
+                            <input type="text" placeholder="John Doe"> <!-- Text input for name -->
                         </div>
-                            <div class="input-group">
-                                <label>Phone:</label>
-                                <input type="text" placeholder="0524234243">
-                            </div>
-                            <div class="input-row">
-                                <div class="input-group">
-                                    <label>Email:</label>
-                                    <input type="email" 
-                                    placeholder="JohnDoe@gmail.com">
-                                </div>
-                            </div>
-                                <div class="input-group">
-                                    <label>Subject:</label>
-                                    <input type="text" placeholder="product">
-                                </div>
-                                <label>Message</label>
-                                <textarea rows="5" placeholder="Your Message"></textarea>
-                                <button type="submit">Send</button>
-                    </form>
-    
                     </div>
-                <div class="contact-right">
-                    <h3>Reach us</h3>
-                    <table>
-                        <tr>
-                            <td>Email</td>
-                            <td>nudelman.kfir@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Phone</td>
-                            <td>0529665227</td>
-                        </tr>
-                        <tr>
-                            <td>Address</td>
-                            <td>רחוב אהרון 18, קריית מוצקין</td>
-                        </tr>
-                    </table>
-    
+                    <div class="input-group"> <!-- Input group for phone -->
+                        <label>Phone:</label> <!-- Label for phone input -->
+                        <input type="text"  placeholder="0524234243"> <!-- Text input for phone -->
                     </div>
-            </div>
-        </div> 
+                    <div class="input-row"> <!-- Input row for email -->
+                        <div class="input-group"> <!-- Input group for email -->
+                            <label>Email:</label> <!-- Label for email input -->
+                            <input type="email" placeholder="JohnDoe@gmail.com"> <!-- Email input -->
+                        </div>
+                    </div>
+                    <div class="input-group"> <!-- Input group for subject -->
+                        <label>Subject:</label> <!-- Label for subject input -->
+                        <input type="text" placeholder="product"> <!-- Text input for subject -->
+                    </div>
+                    <label>Message</label> <!-- Label for message textarea -->
+                    <textarea rows="5" placeholder="Your Message"></textarea> <!-- Textarea for message -->
+                    <button id="sendMessageBtn" onclick="sendMessageBtn()">Send</button> <!-- Send button -->
+                </form> <!-- End of contact form -->
+            </div> <!-- End of contact-left section -->
+            <div class="contact-right"> <!-- Right section of contact box -->
+                <h3>Reach us</h3> <!-- Heading for contact details -->
+                <table> <!-- Contact details table -->
+                    <tr> <!-- Row for email -->
+                        <td>Email</td> <!-- Table cell for email label -->
+                        <td>nudelman.kfir@gmail.com</td> <!-- Table cell for email address -->
+                    </tr>
+                    <tr> <!-- Row for phone -->
+                        <td>Phone</td> <!-- Table cell for phone label -->
+                        <td>0529665227</td> <!-- Table cell for phone number -->
+                    </tr>
+                    <tr> <!-- Row for address -->
+                        <td>Address</td> <!-- Table cell for address label -->
+                        <td>רחוב אהרון 18, קריית מוצקין</td> <!-- Table cell for address -->
+                    </tr>
+                </table> <!-- End of contact details table -->
+            </div> <!-- End of contact-right section -->
+        </div> <!-- End of contact-box -->
+    </div> <!-- End of contact-container -->
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+    <script src="/JavaScript/main.js" ></script> <!-- Include main JavaScript file -->
 </body>
 </html>

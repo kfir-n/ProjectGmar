@@ -1,0 +1,178 @@
+/* Reset default margin, padding, and box-sizing */
+* {
+  margin: 0; /* Set margin to 0 for all elements */
+  padding: 0; /* Set padding to 0 for all elements */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  font-family: "Poppins", sans-serif; /* Set the default font family to Poppins, sans-serif */
+}
+
+/* Set background image for the body */
+body {
+  background-image: url(../image/theBack.jpg); /* Set the background image of the body */
+  background-size: cover; /* Cover the entire background with the image */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Fix the background image position */
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  position: relative; /* Set the position property to relative */
+}
+
+/* Align links to the right */
+.top-menu {
+  display: flex; /* Use flexbox for layout */
+  justify-content: flex-end; /* Align items to the end of the container */
+}
+
+/* Center position elements */
+.p {
+  position: center; /* Set the position property to center */
+}
+
+/* Styles for the logo container */
+.topnav .logo-container {
+  float: left; /* Float the logo container to the left */
+  margin-right: 10px; /* Set right margin to create space between the logo container and other elements */
+}
+
+/* Set max width and height for logo */
+.topnav .logo-container img {
+  max-width: 53%; /* Set the maximum width of the logo */
+  height: 100%; /* Set the height of the logo to 100% of its container */
+  display: block; /* Display the logo as a block-level element */
+}
+
+/* Style the top navigation bar */
+.topnav {
+  background-color: #333; /* Set the background color of the top navigation bar */
+  overflow: hidden; /* Prevent content from overflowing the container */
+  height: 180px; /* Set the height of the top navigation bar */
+}
+
+/* Style the h1 heading in the top navigation */
+.topnav h1 {
+  margin-top: 4rem; /* Set top margin for the heading */
+  font-size: 60px; /* Set font size for the heading */
+  height: 10px; /* Set the height of the heading */
+  color: #ddd; /* Set the text color of the heading */
+  text-align: center; /* Align the heading text to the center */
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right; /* Float the links to the right */
+  color: #f2f2f2; /* Set the text color of the links */
+  text-align: top; /* Align the text of the links to the top */
+  padding: 14px 16px; /* Set padding for the links */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 35px; /* Set font size for the links */
+}
+
+/* Change link color on hover */
+.topnav a:hover {
+  background-color: #ddd; /* Change background color on hover */
+  color: black; /* Change text color on hover */
+}
+
+/* Style the active/current link */
+.topnav a.active {
+  background-color: #04AA6D; /* Set background color for active link */
+  color: white; /* Set text color for active link */
+}
+
+/* Additional styles for register link */
+.topnav a.register-link {
+  float: right; /* Float the register link to the right */
+  color: #f2f2f2; /* Set text color for the register link */
+  text-align: top; /* Align the text of the register link to the top */
+  padding: 14px 16px; /* Set padding for the register link */
+  text-decoration: none; /* Remove underline from the register link */
+  font-size: 35px; /* Set font size for the register link */
+  margin-right: 20px; /* Set right margin to create space between links */
+}
+
+/* Styles for private link */
+.topnav a.private-link {
+  float: right; /* Float the private link to the right */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically in the center */
+  justify-content: center; /* Align items horizontally in the center */
+  width: 75px; /* Set width of the private link */
+  height: 75px; /* Set height of the private link */
+  background-color: hsl(0, 0%, 100%); /* Set background color of the private link */
+  color: #fff; /* Set text color of the private link */
+  border-radius: 50%; /* Set border-radius to create a circular shape */
+  text-decoration: none; /* Remove underline from the private link */
+  font-weight: bold; /* Set font weight for the private link */
+  margin-right: 10px; /* Set right margin to create space between links */
+}
+
+/* Change private link background color on hover */
+.topnav a.private-link:hover {
+  background-color: #ffffff; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+}
+
+/* Set icon color for private link */
+.topnav a.private-link i {
+  color: #000; /* Set color for the icon */
+}
+
+.txt1{
+  text-align: left; /* Set text alignment to the left for elements with class .txt1 */
+  font-size: 50px; /* Set font size to 50 pixels for elements with class .txt1 */
+  margin-bottom: 20px; /* Set bottom margin to 20 pixels for elements with class .txt1 */
+  margin-left: 0.5%; /* Set left margin to 0.5% for elements with class .txt1 */
+}
+
+.txt1 .p1, .p2, .p3{
+  margin-top: 20px; /* Set top margin to 20 pixels for elements with class .p1, .p2, and .p3 inside elements with class .txt1 */
+}
+
+h1 {
+  text-align: center; /* Set text alignment to center for <h1> elements */
+  font-size: 70px; /* Set font size to 70 pixels for <h1> elements */
+  margin-bottom: 0px; /* Set bottom margin to 0 pixels for <h1> elements */
+}
+
+
+button {
+  font-size: 50px; /* Set font size to 50 pixels for <button> elements */
+  color: white; /* Set text color to white for <button> elements */
+  background-color: rgb(27, 6, 209); /* Set background color to a shade of blue for <button> elements */
+  cursor: pointer; /* Set cursor to pointer for <button> elements */
+  display: block; /* Display <button> elements as block-level elements */
+  margin: auto; /* Center align <button> elements horizontally */
+  padding: 10px 20px; /* Set padding to 10 pixels top and bottom, and 20 pixels left and right for <button> elements */
+}
+
+table {
+  font-size: 30px; /* Set font size to 30 pixels for <table> elements */
+  width: 100%; /* Set width to 100% for <table> elements */
+  text-align: center; /* Set text alignment to center for content within <table> elements */
+  margin-top: 50px; /* Set top margin to 50 pixels for <table> elements */
+  border-spacing: 0px; /* Set border spacing to 0 pixels for <table> elements */
+}
+
+table, th, td{
+  border: 1px solid #000; /* Set a 1 pixel solid black border for <table>, <th>, and <td> elements */
+}
+
+
+th, td{
+  padding: 10px; /* Set padding to 10 pixels for <th> and <td> elements */
+  color: #080707; /* Set text color to a dark shade of gray for <th> and <td> elements */
+}
+
+th {
+  color: white; /* Set text color to white for <th> elements */
+  background-color: blue; /* Set background color to blue for <th> elements */
+}
+
+.video-container{
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center align content horizontally within the .video-container element */
+  width: 100%; /* Set width to 100% for the .video-container element */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-top: 30px; /* Set top margin to 30 pixels for the .video-container element */
+}
+
+

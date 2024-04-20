@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/private area.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Private area</title>
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <div class="logo-container"> <img src="../image/logo.png" ></div>
+            <a href="private area.html" class="private-link">
+                <i class='bx bxs-user'  alt="Anonymous Person"></i>
+                
+            </a>
+            <a href="gallery.html">Gallery</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="contact us.html">Contact us</a>
+            <a href="HomePage.html">Home</a>
+            <h1>Welcome to Knee-Care</h1>
+        </div>
+    </header> 
+    <h1 id="welcomeMessage">Welcome to your private area</h1>
+    <div class="button1">
+        <div class="content1">
+            <i class='bx bx-walk' ></i>
+        <span class="button-text1">Start a walk</span>
+        </div>
+    </div>
+    <div class="button2">
+        <div class="content2">
+        <i class='bx bx-history'></i>
+        <span class="button-text2">Stop the walk</span>
+        </div>
+    </div>
+    <div class="button3">
+        <div class="content3">
+        <i class='bx bx-history'></i>
+        <span class="button-text3">Watch My History</span>
+        </div>
+    </div>
+    <div class="button4">
+        <div class="content4">
+        <i class='bx bx-history'></i>
+        <button type="submit" class="btn" onclick="logout()">logout</button>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-check-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database-compat.js"></script>
+    <script src="/JavaScript/private area.js"></script>
+    <script src="/JavaScript/main.js"></script> <!-- This script should initialize Firebase -->
+
+</body>
+</html>

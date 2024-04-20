@@ -1,20 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register</title>
-    <link rel="stylesheet" type="text/css" href="register.css">
-</head>
-<body>
-    <h1>Register</h1>
-    <nav>
-        <ul>
-            <a href="homePage.html"> about us </a> 
-            <a href="login.html"> login </a> 
-            <a href="contact us.html">contact us </a> 
-        </ul>
-    </nav>
-   
-</body>
-</html>
+<!DOCTYPE html> <!-- Define document type as HTML5 -->
+<html lang="en"> <!-- Set document language to English -->
+<head> <!-- Start of head section -->
+    <meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Set viewport for responsiveness -->
+    <title>register</title> <!-- Set title of the document -->
+    <link rel="stylesheet" type="text/css" href="/css/register.css"> <!-- Link to external CSS file for styling -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Link to external boxicons CSS -->
+</head> <!-- End of head section -->
+<body> <!-- Start of body section -->
+    <header> <!-- Start of header section -->
+        <div class="topnav"> <!-- Start of top navigation -->
+            <div class="logo-container"> <img src="../image/logo.png" ></div> <!-- Logo container with image -->
+            <a href="private area.html" class="private-link"> <!-- Link to private area with user icon -->
+                <i class='bx bxs-user'  alt="Anonymous Person"></i> <!-- User icon -->
+            </a>
+            <a href="gallery.html">Gallery</a> <!-- Link to gallery page -->
+            <a href="register.html">Register</a> <!-- Link to register page -->
+            <a href="login.html">Login</a> <!-- Link to login page -->
+            <a href="contact us.html">Contact us</a> <!-- Link to contact us page -->
+            <a href="HomePage.html">Home</a> <!-- Link to home page -->
+            <h1>Welcome to Knee-Care</h1> <!-- Header title -->
+        </div> <!-- End of top navigation -->
+    </header> <!-- End of header section -->
+    <div class="wrapper"> <!-- Start of wrapper div -->
+        <h1>Register</h1> <!-- Heading for registration form -->
+        <div class="input-box"> <!-- Start of input box for full name -->
+            <input type="text" id="name" placeholder="Full name" required> <!-- Input field for full name -->
+            <i class='bx bxs-user'></i> <!-- User icon -->
+        </div> <!-- End of input box for full name -->
+        <div class="input-box"> <!-- Start of input box for email -->
+            <input type="email" id="em" placeholder="Email" required> <!-- Input field for email -->
+            <i class='bx bxs-envelope'></i> <!-- Envelope icon -->
+        </div> <!-- End of input box for email -->
+        <div class="input-box"> <!-- Start of input box for password -->
+            <input type="password" id="pass" regex="" placeholder="Password" required> <!-- Input field for password -->
+            <i class='bx bxs-lock-alt' ></i> <!-- Lock icon -->
+        </div> <!-- End of input box for password -->
+        <button onclick="saveUserOnDB()" type="submit" class="btn">Register</button> <!-- Register button with onclick event -->
+    </div> <!-- End of wrapper div -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script> <!-- Firebase compatibility script -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script> <!-- Firebase authentication compatibility script -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script> <!-- Firebase storage compatibility script -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> <!-- Polyfill script -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script> <!-- Firebase app script -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script> <!-- Firebase analytics script -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script> <!-- Firebase authentication script -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script> <!-- Firebase database script -->
+    <script src="/JavaScript/main.js" ></script> <!-- Main JavaScript file -->
+</body> <!-- End of body section -->
+</html> <!-- End of HTML document -->

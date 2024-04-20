@@ -1,0 +1,203 @@
+* {
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+  box-sizing: border-box; /* Use border-box model for consistent box sizing */
+  font-family: "Poppins", sans-serif; /* Set default font family */
+}
+
+body {
+  background-image: url(../image/theBack.jpg); /* Set background image */
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Fixed background attachment */
+  background-repeat: no-repeat; /* No repeat for background */
+  position: relative; /* Set position relative for positioning children elements */
+}
+
+.top-menu {
+  display: flex; /* Display top menu items as flex */
+  justify-content: flex-end; /* Align items to the end (right) */
+}
+
+.p {
+  position: center; /* Not a valid position property */
+}
+
+.topnav .logo-container {
+  float: left; /* Float logo container to the left */
+  margin-right: 10px; /* Add margin to the right of the logo container */
+}
+
+.topnav .logo-container img {
+  max-width: 53%; /* Set maximum width for logo */
+  height: 100%; /* Set height for logo */
+  display: block; /* Display logo as block element */
+}
+
+.topnav {
+  background-color: #333; /* Set background color for top navigation */
+  overflow: hidden; /* Hide overflowing content */
+  height: 180px; /* Set height for top navigation */
+}
+
+.topnav h1 {
+  margin-top: 4rem; /* Set margin top for h1 */
+  font-size: 60px; /* Set font size for h1 */
+  height: 10px; /* Set height for h1 */
+  color: #ddd; /* Set color for h1 */
+  text-align: center; /* Align text to center */
+}
+
+.topnav a {
+  float: right; /* Float links to the right */
+  color: #f2f2f2; /* Set color for links */
+  text-align: top; /* Not a valid text-align property */
+  padding: 14px 16px; /* Set padding for links */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 35px; /* Set font size for links */
+}
+
+.topnav a:hover {
+  background-color: #ddd; /* Change background color on hover */
+  color: black; /* Change text color on hover */
+}
+
+.topnav a.active {
+  background-color: #04AA6D; /* Set background color for active link */
+  color: white; /* Set text color for active link */
+}
+
+
+.topnav a.register-link {
+  float: right; /* Float register link to the right */
+  color: #f2f2f2; /* Set color for register link */
+  text-align: top; /* Not a valid text-align property */
+  padding: 14px 16px; /* Set padding for register link */
+  text-decoration: none; /* Remove underline from register link */
+  font-size: 35px; /* Set font size for register link */
+  margin-right: 20px; /* Set margin-right for register link */
+}
+
+.topnav a.private-link {
+  float: right; /* Float private link to the right */
+  display: flex; /* Display as flex */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Align items horizontally */
+  width: 75px; /* Set width for private link */
+  height: 75px; /* Set height for private link */
+  background-color: hsl(0, 0%, 100%); /* Set background color for private link */
+  color: #fff; /* Set color for private link */
+  border-radius: 50%; /* Set border radius for private link */
+  text-decoration: none; /* Remove underline from private link */
+  font-weight: bold; /* Set font weight for private link */
+  margin-right: 10px;  /* Set margin-right for private link */
+}
+
+.topnav a.private-link:hover {
+  background-color: #ffffff; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+} 
+
+.topnav a.private-link i {
+  color: #000; /* Set color for icon inside private link */
+}
+
+h1 {
+  margin-bottom:  0; /* Set margin-bottom to 0 for h1 */
+}
+
+.p1, .p2, .p3, .p4, .p5 {
+  text-align: left; /* Set text alignment for paragraphs */
+  font-size: 30px; /* Set font size for paragraphs */
+}
+
+.wrapper {
+  margin: auto; /* Center wrapper horizontally */
+  margin-top: 100px; /* Set top margin for wrapper */
+  width: 500px; /* Set width for wrapper */
+  background: transparent; /* Set background color for wrapper */
+  border: 2px solid rgba(255, 255, 255, .2); /* Set border for wrapper */
+  backdrop-filter: blur(20px); /* Apply backdrop filter */
+  box-shadow: 0 0 10px solid rgba(0, 0, 0, .2); /* Apply box shadow */
+  color: black; /* Set text color for wrapper */
+  border-radius: 10px; /* Set border radius for wrapper */
+  padding: 30px 40px; /* Set padding for wrapper */ 
+}
+
+.wrapper h1 {
+  font-size: 36px; /* Set font size for h1 inside wrapper */
+  text-align: center; /* Align text to center */
+}
+
+.wrapper .input-box {
+  position: relative; /* Set position relative for input box */
+  width: 100%; /* Set width for input box */
+  height: 50px; /* Set height for input box */
+  margin: 30px 0; /* Set margin for input box */
+}
+
+.input-box i {
+  position: absolute; /* Set position absolute for icon inside input box */
+  right: 20px; /* Set right position for icon */
+  top: 50%; /* Set top position for icon */
+  transform: translateY(-50%); /* Center icon vertically */
+  font-size: 20px; /* Set font size for icon */
+}
+
+.input-box input {
+  width: 100%; /* Set width for input field */
+  height: 100%; /* Set height for input field */
+  background: transparent; /* Set background color for input field */
+  border-radius: 40px; /* Set border radius for input field */
+  padding: 20px 45px 20px 20px; /* Set padding for input field */
+}
+
+.input-box input::placeholder {
+  color: black; /* Set placeholder color */
+  text-align: left; /* Align placeholder text to left */
+  font-size: 20px; /* Set font size for placeholder */
+}
+
+.wrapper .remember-forget {
+  display: flex; /* Display as flex */
+  justify-content: space-between; /* Space items evenly */
+  font-size: 14.5px; /* Set font size for remember-forget section */
+  margin: -15px 0 15px; /* Set margin for remember-forget section */
+}
+
+.remember-forget label input {
+  margin-right: 3px; /* Set margin-right for input inside label */
+}
+
+.remember-forget a {
+  text-decoration: none; /* Remove underline from link */
+}
+
+.remember-forget a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.wrapper .btn {
+  width: 100%; /* Set width for button */
+  height: 45px; /* Set height for button */
+  background: white; /* Set background color for button */
+  border-radius: 40px; /* Set border radius for button */
+  cursor: pointer; /* Set cursor to pointer */
+  font-size: 20px; /* Set font size for button */
+  font-weight: 600; /* Set font weight for button */
+}
+
+.wrapper .register-link {
+  font-size: 14.5px; /* Set font size for register link */
+  text-align: center; /* Align text to center */
+  margin-top: 20px; /* Set top margin for register link */
+}
+
+.register-link p a {
+  text-decoration: none; /* Remove underline from link */
+  font-weight: 600; /* Set font weight for link */
+}
+
+.register-link p a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
