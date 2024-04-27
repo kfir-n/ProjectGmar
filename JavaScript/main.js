@@ -9,79 +9,66 @@ const firebaseConfig = {
   appId: "",
   measurementId: ""
 };
-currentUser = ""
+currentUser = ""; // Variable to hold the current user
 window.addEventListener("load", () => {
-  user = JSON.parse(localStorage.getItem("User"))
-  currentUser = JSON.parse(localStorage.getItem("currentUser"))
-  // console.log(user);
-  console.log(currentUser);
-
+  user = JSON.parse(localStorage.getItem("User")); // Read user from localStorage
+  currentUser = JSON.parse(localStorage.getItem("currentUser")); // Read current user from localStorage
+  console.log(currentUser); // Log the current user to console
 });
-const app = firebase.initializeApp(firebaseConfig);   //התחברות לפרויקט בשרת
-const database = firebase.database();
+const app = firebase.initializeApp(firebaseConfig); // Connect to the project on the Firebase server
+const database = firebase.database(); // Database reference
+// Function to save a new user to the database
 function saveUserOnDB() {
-   var email = document.getElementById("em").value;
-   var password = document.getElementById("pass").value;
-   var fullName = document.getElementById("name").value;
+   var email = document.getElementById("em").value; // Read email from the input
+   var password = document.getElementById("pass").value; // Read password from the input
+   var fullName = document.getElementById("name").value; // Read full name from the input
     
-    var auth = firebase.auth();
-    auth.createUserWithEmailAndPassword(email, password)
+    var auth = firebase.auth(); // Authentication object
+    auth.createUserWithEmailAndPassword(email, password) // Create user in Firebase Authentication
       .then((userCredential) => {
-        var user = userCredential.user;
-        localStorage.setItem("User", JSON.stringify(user));
-         alert("Successful registration!");
-
-          email_a=email.replace(".", "_");
-         firebase.database().ref('users/' + email_a).set({
+        var user = userCredential.user; // Get the created user
+        localStorage.setItem("User", JSON.stringify(user)); // Store the user in localStorage
+         alert("Successful registration!"); // Alert the user about successful registration
+          email_a=email.replace(".", "_"); // Encode the email for use as a key
+         firebase.database().ref('users/' + email_a).set({ // Save the user to the database
           email: email,
           fullName: fullName
-        }).then(() => {
+        }).then(() => { // If successful
           console.log('User data saved to Realtime Database successfully!');
-          window.location.href = "login.html"; // הפניה לעמוד הבא לאחר הרשמה מוצלחת
-        }).catch((error) => {
+          window.location.href = "login.html"; // Redirect to login page after successful registration
+        }).catch((error) => { // If failed
           console.error('Failed to save user data to Realtime Database:', error);
         });
   
       })
       .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorMessage);
-        alert("Error: " + errorMessage);
+        var errorCode = error.code; // Error code
+        var errorMessage = error.message; // Error message
+        console.log(errorMessage); // Log the error message to console
+        alert("Error: " + errorMessage); // Alert the user about the error
       });
   }
 
-
-
+// Function for user login
 function login() {
-  email = document.getElementById("email").value
-  password = document.getElementById("password").value
+  email = document.getElementById("email").value; // Read email from the input
+  password = document.getElementById("password").value; // Read password from the input
 
-
-
+  // Sign in with email and password
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
-      var user = userCredential.user;
-      localStorage.setItem("currentUser", JSON.stringify(user))
-      alert("Successful Login!");
-      window.location.href = "private area.html";
-      // localStorage.setItem('train', JSON.stringify({}));
-      // localStorage.setItem('CompleteTrain', false);
-      // Redirect to the homePage after successful login
-      // ...
+      var user = userCredential.user; // Get the signed-in user
+      localStorage.setItem("currentUser", JSON.stringify(user)); // Store the current user in localStorage
+      alert("Successful Login!"); // Alert the user about successful login
+      window.location.href = "private area.html"; // Redirect to private area after successful login
     })
     .catch((error) => {
-      // var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorMessage);
-      alert("Error: " + errorMessage);
-
+      var errorMessage = error.message; // Error message
+      console.log(errorMessage); // Log the error message to console
+      alert("Error: " + errorMessage); // Alert the user about the error
     });
-
-
 }
-
 function readAndDisplayUsers() {
   var usersRef = database.ref('users');
   usersRef.on('value', function(snapshot) {
@@ -98,42 +85,3 @@ function readAndDisplayUsers() {
   });
 }
 
-// var newMessageRef = database.ref('messages').push();
-// newMessageRef.set({
-//     name: "John Doe",
-//     email: "johndoe@example.com",
-//     message: "Hello, this is a test message."
-// })
-// .then(function() {
-//     console.log("Message sent successfully");
-// })
-// .catch(function(error) {
-//     console.error("Error sending message: ", error);
-// });
-
-
-const email = currentUser.email;
-// var sendMessageBtn = document.getElementById('sendMessageBtn');
-
-// // Add event listener to the button
-// function sendMessageToDatabase(name, email, message) {
-
-//   // Push a new message to the "messages" node
-//   var newMessageRef = database.ref('messages/').push();
-//   newMessageRef.set({
-//       name: name,
-//       email: email,
-//       message: message,
-//       timestamp: firebase.database.ServerValue.TIMESTAMP // Add a timestamp for ordering
-//   })
-//   .then(function sendMessageToDatabase(name, email, message) {
-//       console.log("Message sent successfully");
-//   })
-//   .catch(function sendMessageToDatabase(name, email, message) {
-//       console.error("Error sending message: ", error);
-//   });
-
-
-// }
-
-// sendMessageBtn.addEventListener('click', function sendMessageToDatabase(name, email, message){});
