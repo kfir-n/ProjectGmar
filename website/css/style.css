@@ -4,11 +4,12 @@
   padding: 0; /* Set padding to 0 for all elements */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   font-family: "Poppins", sans-serif; /* Set the default font family to Poppins, sans-serif */
+  cursor: default;
 }
 
 /* Set background image for the body */
 body {
-  background-image: url(../image/theBack.jpg); /* Set the background image of the body */
+  background-image: url(../image/theBack.jpeg); /* Set the background image of the body */
   background-size: cover; /* Cover the entire background with the image */
   background-position: center; /* Center the background image */
   background-attachment: fixed; /* Fix the background image position */
@@ -38,6 +39,7 @@ body {
   max-width: 53%; /* Set the maximum width of the logo */
   height: 100%; /* Set the height of the logo to 100% of its container */
   display: block; /* Display the logo as a block-level element */
+  
 }
 
 /* Style the top navigation bar */
@@ -121,6 +123,7 @@ body {
   font-size: 50px; /* Set font size to 50 pixels for elements with class .txt1 */
   margin-bottom: 20px; /* Set bottom margin to 20 pixels for elements with class .txt1 */
   margin-left: 0.5%; /* Set left margin to 0.5% for elements with class .txt1 */
+  
 }
 
 .txt1 .p1, .p2, .p3{
@@ -131,6 +134,7 @@ h1 {
   text-align: center; /* Set text alignment to center for <h1> elements */
   font-size: 70px; /* Set font size to 70 pixels for <h1> elements */
   margin-bottom: 0px; /* Set bottom margin to 0 pixels for <h1> elements */
+  
 }
 
 
@@ -141,10 +145,11 @@ button {
   cursor: pointer; /* Set cursor to pointer for <button> elements */
   display: block; /* Display <button> elements as block-level elements */
   margin: auto; /* Center align <button> elements horizontally */
-  padding: 10px 20px; /* Set padding to 10 pixels top and bottom, and 20 pixels left and right for <button> elements */
+  padding: 0px auto; /* Set padding to 10 pixels top and bottom, and 20 pixels left and right for <button> elements */
 }
 
 table {
+  
   font-size: 30px; /* Set font size to 30 pixels for <table> elements */
   width: 100%; /* Set width to 100% for <table> elements */
   text-align: center; /* Set text alignment to center for content within <table> elements */

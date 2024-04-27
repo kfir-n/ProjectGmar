@@ -7,19 +7,20 @@ const firebaseConfig = {
   };
   
   
-  const app = firebase.initializeApp(firebaseConfig); // אתחול של ה-App של Firebase
-  const database = firebase.database(); // הקשר עם מסד הנתונים
-  const email = currUser.email.replace(".", "_"); // יצירת משתנה לאימייל של המשתמש
-  // פונקציה לשמירת משתמש חדש במסד הנתונים
-  function registerUser(email, password, otherUserData) {
-    // יצירת משתמש ב-Firebase Authentication
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+const app = firebase.initializeApp(firebaseConfig); // Initialize Firebase app
+const database = firebase.database(); // Initialize Firebase database
+ // Create a variable for the user's email with '.' replaced by '_'
+const email = currUser.email.replace(".", "_");
+
+// Function to register a new user in Firebase Authentication and save additional data to Realtime Database
+function registerUser(email, password, otherUserData) {
+    firebase.auth().createUserWithEmailAndPassword(email, password) // Create a new user with email and password
       .then((userCredential) => {
-        // המשתמש נרשם בהצלחה, עכשיו נוסיף את שאר הנתונים ל-Realtime Database
-        const userId = userCredential.user.uid;
+        const userId = userCredential.user.uid; // Get the unique user ID
+        // Save user data to Realtime Database under 'users' node with the unique user ID as key
         firebase.database().ref('users/' + userId).set({
           email: email,
-          ...otherUserData
+          ...otherUserData // Spread operator to add other user data
         }).then(() => {
           console.log('User data saved to Realtime Database successfully!');
         }).catch((error) => {
@@ -29,27 +30,29 @@ const firebaseConfig = {
       .catch((error) => {
         console.error('Failed to create user:', error);
       });
-  }
-  
-  // קריאה לפונקציה עם דוגמה לנתונים
-  registerUser('example@example.com', 'password123', {name: 'John Doe', age: 30});
-  
-  function register() {
-    const fullName = document.getElementById('name').value;
-    const email = document.getElementById('em').value;
-    const password = document.getElementById('pass').value;
+}
 
-    // כאן תבצע את קריאת הפונקציה לרישום לפי הדוגמה שנתתי קודם
+// Example of registering a new user with sample data
+registerUser('example@example.com', 'password123', {name: 'John Doe', age: 30});
+
+// Function to register a user using input values from HTML form
+function register() {
+    const fullName = document.getElementById('name').value; // Get full name from input field
+    const email = document.getElementById('em').value; // Get email from input field
+    const password = document.getElementById('pass').value; // Get password from input field
+
+    // Call registerUser function with input values and additional user data (name)
     registerUser(email, password, {name: fullName});
-}  // פונקציה להתחברות למערכת
- 
-    
-  const messagesRef = database.ref('contactUsMessages/');
-  
-  function sendMessage(email, message) {
-    // Push a new message under 'contactUsMessages' with the email and message details
-    messagesRef.set({
+}
+
+// Reference to 'contactUsMessages' node in Realtime Database
+const messagesRef = database.ref('contactUsMessages/');
+
+// Function to send a message with email and message details to Realtime Database
+function sendMessage(email, message) {
+    // Push a new message under 'contactUsMessages' with email and message details
+    messagesRef.push({
       email: email,
       message: message
     });
-  }
+}

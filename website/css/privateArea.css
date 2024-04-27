@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  
+  }
+
+  body {
+    background-image: url(../image/theBack.jpeg);
+    background-size: cover;
+    background-position: center; 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+
+.top-menu {
+    display: flex;
+    justify-content: flex-end; /* Move the links to the right */
+  }
+  
+  .p {
+    position: center;
+  }
+  
+  .topnav .logo-container {
+  float: left;
+  margin-right: 10px;
+  }
+  
+  .topnav .logo-container img {
+  max-width: 53%;
+  height: 100%;
+  display: block;
+  }
+  
+  /* Add a black background color to the top navigation */
+  .topnav {
+  background-color: #333;
+  overflow: hidden;
+  height: 180px;
+  }
+  
+.topnav h1 {
+  margin-top: 4rem;
+  font-size: 60px; 
+  height: 10px;
+  color: #ddd;
+  text-align: center;
+      
+ }
+    
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: top;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 35px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+  }
+  
+  .topnav a.register-link {
+    float: right;
+    color: #f2f2f2;
+    text-align: top;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 35px;
+    margin-right: 20px;
+  }
+  
+.private-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.private-link:hover .menu-container {
+    display: block;
+}
+
+.menu-item {
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.topnav a.private-link {
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    background-color: hsl(0, 0%, 100%);
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px; 
+ }
+ 
+ .topnav a.private-link:hover {
+    background-color: #ffffff;
+    color: #fff;
+ } 
+ 
+ .topnav a.private-link i{
+    color: #000;
+ }
+
+/* Styles for h1 */
+h1 {
+    text-align: center; /* Align text to the center */
+    font-size: 70px; /* Set font size for the heading */
+    margin-bottom: 0px; /* Remove bottom margin */
+  }
+  
+  /* Styles for the first button */
+  .button1 {
+    position: absolute; /* Position the button absolutely */
+    top: 50%; /* Align the button to the vertical center */
+    left: 50%; /* Align the button to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
+    height: 95px; /* Set height of the button */
+    width: 500px; /* Set width of the button */
+    background: #fff; /* Set background color of the button */
+    border-radius: 55px; /* Set border-radius for the button */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
+    cursor: pointer; /* Set cursor style to pointer */
+    overflow: hidden; /* Hide overflow content */
+    margin-top: 250px; /* Add top margin to the button */
+  }
+  
+  /* Change button style on hover */
+  .button1:hover {
+    position: absolute; /* Position the button absolutely */
+    top: 50%; /* Align the button to the vertical center */
+    left: 50%; /* Align the button to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
+    height: 95px; /* Set height of the button */
+    width: 500px; /* Set width of the button */
+    transition: 1.5s; /* Add transition effect */
+    background: rgb(86, 201, 57); /* Change background color on hover */
+    border-radius: 55px; /* Set border-radius for the button */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
+    cursor: pointer; /* Set cursor style to pointer */
+    overflow: hidden; /* Hide overflow content */
+    margin-top: 250px; /* Add top margin to the button */
+  }
+  
+  /* Styles for button content */
+  .button1 .content1 {
+    height: 100%; /* Set height of button content */
+    width: 100%; /* Set width of button content */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Align items horizontally in the center */
+    transition: all 0.2s ease; /* Add transition effect */
+    transition-delay: 0.2s; /* Add delay to transition */
+  }
+  
+  /* Styles for button text and icon */
+  .content1 i, .content1 .button-text1 {
+    color: #000; /* Set color for icon and text */
+    font-size: 40px; /* Set font size for icon */
+    font-weight: 500; /* Set font weight for text */
+  }
+  
+  .content1 .button-text1 {
+    font-size: 28px; /* Set font size for button text */
+    margin-right: 20px; /* Add right margin to button text */
+  }
+  /* Styles for the second button */
+  .button2 {
+    position: absolute; /* Position the button absolutely */
+    top: 50%; /* Align the button to the vertical center */
+    left: 50%; /* Align the button to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
+    height: 95px; /* Set height of the button */
+    width: 500px; /* Set width of the button */
+    background: white; /* Set background color of the button */
+    border-radius: 55px; /* Set border-radius for the button */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
+    cursor: pointer; /* Set cursor style to pointer */
+    overflow: hidden; /* Hide overflow content */
+    margin-top: 500px; /* Add top margin to the button */
+  }
+  
+  /* Change button style on hover */
+  .button2:hover {
+    position: absolute; /* Position the button absolutely */
+    top: 50%; /* Align the button to the vertical center */
+    left: 50%; /* Align the button to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
+    height: 95px; /* Set height of the button */
+    width: 500px; /* Set width of the button */
+    transition: 1.5s; /* Add transition effect */
+    background: rgb(86, 201, 57); /* Change background color on hover */
+    border-radius: 55px; /* Set border-radius for the button */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
+    cursor: pointer; /* Set cursor style to pointer */
+    overflow: hidden; /* Hide overflow content */
+    margin-top: 500px; /* Add top margin to the button */
+  }
+  
+  /* Styles for button content */
+  .button2 .content2 {
+    height: 100%; /* Set height of button content */
+    width: 100%; /* Set width of button content */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Align items horizontally in the center */
+    transition: all 0.2s ease; /* Add transition effect */
+    transition-delay: 0.2s; /* Add delay to transition */
+  }
+  
+  /* Styles for button text and icon */
+  .content2 i, .content2 .button-text2 {
+    color: #000; /* Set color for icon and text */
+    font-size: 40px; /* Set font size for icon */
+    font-weight: 500; /* Set font weight for text */
+  }
+  
+  .content2 .button-text2 {
+    font-size: 28px; /* Set font size for button text */
+    margin-right: 20px; /* Add right margin to button text */
+  }
+  
+  /* Styles for the third button */
+  .button3 {
+    position: absolute; /* Position the button absolutely */
+    top: 50%; /* Align the button to the vertical center */
+    left: 50%; /* Align the button to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
+    height: 95px; /* Set height of the button */
+    width: 500px; /* Set width of the button */
+    background: white; /* Set background color of the button */
+    border-radius: 55px; /* Set border-radius for the button */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
+    cursor: pointer; /* Set cursor style to pointer */
+    overflow: hidden; /* Hide overflow content */
+    margin-top: 750px; /* Add top margin to the button */
+  }
+  
+  /* Change button style on hover */
+  .button3:hover {
+    position: absolute; /* Position the button absolutely */
+    top: 50%; /* Align the button to the vertical center */
+    left: 50%; /* Align the button to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
+    height: 95px; /* Set height of the button */
+    width: 500px; /* Set width of the button */
+    transition: 1.5s; /* Add transition effect */
+    background: rgb(86, 201, 57); /* Change background color on hover */
+    border-radius: 55px; /* Set border-radius for the button */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
+    cursor: pointer; /* Set cursor style to pointer */
+    overflow: hidden; /* Hide overflow content */
+    margin-top: 750px; /* Add top margin to the button */
+  }
+  
+  /* Styles for button content */
+  .button3 .content3 {
+    height: 100%; /* Set height of button content */
+    width: 100%; /* Set width of button content */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Align items horizontally in the center */
+    transition: all 0.2s ease; /* Add transition effect */
+    transition-delay: 0.2s; /* Add delay to transition */
+  }
+  
+  /* Styles for button text and icon */
+  .content3 i, .content3 .button-text3 {
+    color: #000; /* Set color for icon and text */
+    font-size: 40px; /* Set font size for icon */
+    font-weight: 500; /* Set font weight for text */
+  }
+  
+  .content3 .button-text3 {
+    font-size: 28px; /* Set font size for button text */
+    margin-right: 20px; /* Add right margin to button text */
+  }
+  
+  /* Styles for the fourth button */
+  .button4 .btn {
+    position: absolute; /* Position the button absolutely */
+    top: 50%; /* Align the button to the vertical center */
+    left: 50%; /* Align the button to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
+    height: 95px; /* Set height of the button */
+    width: 500px; /* Set width of the button */
+    background: #fff; /* Set background color of the button */
+    border-radius: 55px; /* Set border-radius for the button */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
+    cursor: pointer; /* Set cursor style to pointer */
+    overflow: hidden; /* Hide overflow content */
+    margin-top: 1000px; /* Add top margin to the button */
+  }
+  
+  /* Change button style on hover */
+  .button4 .btn:hover {
+    position: absolute; /* Position the button absolutely */
+    top: 50%; /* Align the button to the vertical center */
+    left: 50%; /* Align the button to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
+    height: 95px; /* Set height of the button */
+    width: 500px; /* Set width of the button */
+    transition: 1.5s; /* Add transition effect */
+    background: rgb(86, 201, 57); /* Change background color on hover */
+    border-radius: 55px; /* Set border-radius for the button */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
+    cursor: pointer; /* Set cursor style to pointer */
+    overflow: hidden; /* Hide overflow content */
+    margin-top: 1000px; /* Add top margin to the button */
+  }
+  
+  /* Styles for button content */
+  .button4 .content4 {
+    height: 100%; /* Set height of button content */
+    width: 100%; /* Set width of button content */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Align items horizontally in the center */
+    transition: all 0.2s ease; /* Add transition effect */
+    transition-delay: 0.2s; /* Add delay to transition */
+  }
+  
+  /* Styles for button icon */
+  .content4 i {
+    color: #000; /* Set color for icon */
+    font-size: 40px; /* Set font size for icon */
+    font-weight: 500; /* Set font weight for icon */
+    vertical-align: middle; /* Align icon vertically in the middle */
+    align-items: center; /* Align icon and text vertically in the center */
+  }
+  
+  /* Styles for button text */
+  .content4 .btn {
+    font-size: 28px; /* Set font size for button text */
+    margin-right: 20px; /* Add right margin to button text */
+    text-align: center; /* Align button text to the center */
+  }
+  
+  /* Additional styles for button content */
+  .content1 i, .content2 i, .content3 i, .content4 i {
+    align-items: left; /* Align icon to the left */
+    margin-right: 20px; /* Add right margin to icon */
+  }
+

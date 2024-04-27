@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+}
+
+body {
+  background-image: url(../image/theBack.jpeg);
+  background-size: cover;
+  background-position: center; 
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.top-menu {
+  display: flex;
+  justify-content: flex-end; /* Move the links to the right */
+}
+
+.p {
+  position: center;
+}
+
+.topnav .logo-container {
+float: left;
+margin-right: 10px;
+}
+
+.topnav .logo-container img {
+max-width: 53%;
+height: 100%;
+display: block;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+background-color: #333;
+overflow: hidden;
+height: 180px;
+}
+
+.topnav h1 {
+margin-top: 4rem;
+font-size: 60px; 
+height: 10px;
+color: #ddd;
+text-align: center;
+  
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+float: right;
+color: #f2f2f2;
+text-align: top;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 35px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+background-color: #04AA6D;
+color: white;
+}
+
+
+.topnav a.register-link {
+  float: right;
+  color: #f2f2f2;
+  text-align: top;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 35px;
+  margin-right: 20px;
+}
+
+.topnav a.private-link {
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  background-color: hsl(0, 0%, 100%);
+  color: #fff;
+  border-radius: 50%;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px; 
+}
+
+.topnav a.private-link:hover {
+  background-color: #ffffff;
+  color: #fff;
+} 
+
+.topnav a.private-link i{
+  color: #000;
+}
+
+
+h1 {
+    margin-bottom:  0; /* Set margin-bottom to 0 for h1 */
+}
+
+.wrapper1 h1 {
+  margin-top: 20px; /* Set top margin to 20 pixels for <h1> elements within elements with class .wrapper1 */
+  font-size: 50px; /* Set font size to 50 pixels for <h1> elements within elements with class .wrapper1 */
+  text-align: center; /* Center-align text for <h1> elements within elements with class .wrapper1 */
+}
+
+.wrapper2 h1{
+  margin-top: 60px; /* Set top margin to 60 pixels for <h1> elements within elements with class .wrapper2 */
+  font-size: 50px; /* Set font size to 50 pixels for <h1> elements within elements with class .wrapper2 */
+  text-align: center; /* Center-align text for <h1> elements within elements with class .wrapper2 */
+}
+
+.wrapper3 h1{
+  margin-top: 80px; /* Set top margin to 80 pixels for <h1> elements within elements with class .wrapper3 */
+  font-size: 50px; /* Set font size to 50 pixels for <h1> elements within elements with class .wrapper3 */
+  text-align: center; /* Center-align text for <h1> elements within elements with class .wrapper3 */
+}
+
+.wrapper4 h1{
+  margin-top: 175px; /* Set top margin to 175 pixels for <h1> elements within elements with class .wrapper4 */
+  font-size: 50px; /* Set font size to 50 pixels for <h1> elements within elements with class .wrapper4 */
+  text-align: center; /* Center-align text for <h1> elements within elements with class .wrapper4 */
+}
+
+.wrapper5 h1{
+  margin-top: 80px; /* Set top margin to 80 pixels for <h1> elements within elements with class .wrapper5 */
+  font-size: 50px; /* Set font size to 50 pixels for <h1> elements within elements with class .wrapper5 */
+  text-align: center; /* Center-align text for <h1> elements within elements with class .wrapper5 */
+}
+
+.wrapper1 p, .wrapper2 p, .wrapper3 p, .wrapper4 p, .wrapper5 p {
+  position: relative; /* Set position to relative for <p> elements within elements with classes .wrapper1, .wrapper2, .wrapper3, .wrapper4, and .wrapper5 */
+  font-size: 35px; /* Set font size to 35 pixels for <p> elements within elements with classes .wrapper1, .wrapper2, .wrapper3, .wrapper4, and .wrapper5 */
+  width: 100%; /* Set width to 100% for <p> elements within elements with classes .wrapper1, .wrapper2, .wrapper3, .wrapper4, and .wrapper5 */
+  height: 50px; /* Set height to 50 pixels for <p> elements within elements with classes .wrapper1, .wrapper2, .wrapper3, .wrapper4, and .wrapper5 */
+  margin: 30px 0; /* Set top and bottom margin to 30 pixels and left and right margin to 0 for <p> elements within elements with all the classes (.wrapper1, .wrapper2, etc.) */
+  margin-left: 0.5%; /* Set left margin to 0.5% for <p> elements within elements with classes .wrapper1, .wrapper2, .wrapper3, .wrapper4, and .wrapper5 */
+}
+
