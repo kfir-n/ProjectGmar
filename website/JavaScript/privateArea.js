@@ -42,6 +42,7 @@ window.addEventListener("load", () => {
     console.log(currentUser); // Log current user to console
 });
 
+console.log("hello test");
 const app = firebase.initializeApp(firebaseConfig); // Initialize Firebase app
 const database = firebase.database(); // Initialize Firebase database
 const currUser = JSON.parse(localStorage.getItem("currentUser")); // Retrieve current user from localStorage
@@ -50,7 +51,6 @@ const email = currUser.email.replace(".", "_"); // Replace '.' in email for use 
 // Reference to the user's email node
 const userRef = database.ref('users/');
 const emailRef = database.ref('users/' + email);
-
 // Function to trigger start and stop walk
 function sendCurrentStateOfIsStart(start) {
     database.ref('isStart').set(start); // Set 'isStart' value in Firebase
@@ -66,8 +66,8 @@ button1.addEventListener("click", () => {
         
         button1.classList.add("active");
         var user = firebase.auth().currentUser;
-        let timestamp = getCurrentTimeMillis(); // Get current timestamp
-        console.log(timestamp);
+        let timestamp = formatDate(Date.now()); // Get current timestamp //Lena
+        console.log("1:"+timestamp);
 
         // Set data in Firebase
         firebase.database().ref('/users/'+email+'/walk/' + timestamp).set({
@@ -80,21 +80,24 @@ button1.addEventListener("click", () => {
     });
 });
 
-let button2 = document.querySelector(".button2");
+let button2 = document.querySelector(".button2"); //stop button
 button2.addEventListener("click", () => {
     button2.classList.add("active");
     
     // Fetch the last timestamp from Firebase
     firebase.database().ref('/users/'+email+'/walk').orderByKey().limitToLast(1).once('value').then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-            var timestamp = childSnapshot.key;
+            var timestamp = formatTime(Date.now());//childSnapshot.key; //Lena
             var angleDetailsRef = firebase.database().ref('/users/'+email+'/walk/' + timestamp + '/angleDetails');
+            var timestampRef = firebase.database().ref('/users/'+email+'/walk/' + timestamp + '/time');
             
             // Retrieve the last angle value from Firebase
             database.ref('angle').once('value').then(function(snapshot) {
                 var angleValue = snapshot.val();
+                let CurrTimeStamp = formatTime(Date.now()); // Get current timestamp //Lena
                 
                 // Update the angleDetails with the retrieved angle value
+                timestampRef.set(CurrTimeStamp);
                 angleDetailsRef.set(angleValue);
                 
                 // Log the retrieved angle value
@@ -114,19 +117,45 @@ button2.addEventListener("click", () => {
 });
 
 
+// convert to date
+function formatDate(milliseconds) {
+    // Create a new Date object with the provided milliseconds
+    const date = new Date(milliseconds);
+    
+    // Extract date components
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // January is 0
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    const millisecondsFormatted = String(date.getMilliseconds()).padStart(3, '0');
 
+    // Construct the formatted date string
+    const formattedDate = `${day}-${month}-${year} ${hours}:${minutes}`;
 
-
-
-
-function getCurrentTimeMillis() {
-    return Date.now(); // Get current timestamp in milliseconds
+    return formattedDate;
 }
+-
+// convert to date
+function formatTime(milliseconds) {
+    // Create a new Date object with the provided milliseconds
+    const date = new Date(milliseconds);
+    
+    // Extract date components
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // January is 0
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+    const millisecondsFormatted = String(date.getMilliseconds()).padStart(3, '0');
 
+    // Construct the formatted date string
+    const formattedDate = `${hours}:${minutes}:${seconds}:${millisecondsFormatted}`;
 
-
-
-
+    return formattedDate;
+}
 
 // Function for user logout
 function logout() {
@@ -159,57 +188,39 @@ function updateWelcomeMessage(fullName) {
 /////////////////////////////////////////////////////////////////////
 //////////////////        Watch my history              /////////////
 /////////////////////////////////////////////////////////////////////
+// Assume firebaseConfig is initialized earlier in the file
+// Initialize Firebase
+// Function to fetch and display history data
+console.log(emailRef);
+function fetchHistoryData(email) {
+    const database = firebase.database(); // Initialize Firebase database
+    // Normalize email to use as a database key
+    const normalizedEmail = email.replace('.', '_');
+    const userWalksRef = database.ref('users/' + normalizedEmail + '/walk');
+    userWalksRef.once('value', (snapshot) => {
+        const walks = snapshot.val();
+        const tableBody = document.getElementById('usersTable').querySelector('tbody');
 
+        // Clear existing table data
+        tableBody.innerHTML = '';
 
-// When the DOM content is loaded, this function is executed
-document.addEventListener('DOMContentLoaded', function () {
-
-    // User authentication check
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (!user) {
-            window.location.href = 'login.html'; // Redirect to login page if not authenticated
+        // Loop through each walk entry and add a row to the table
+        for (const key in walks) {
+            if (walks.hasOwnProperty(key)) {
+                const walkEntry = walks[key];
+                const row = tableBody.insertRow();
+                
+                const angleCell = row.insertCell(0);
+                const timeCell = row.insertCell(1);
+                
+                angleCell.textContent = walkEntry.angleDetails;
+                timeCell.textContent =  formatTime(Date.now()); //new Date(parseInt(walkEntry.time)).toLocaleString(); //Lena
+            }
         }
+    }).catch((error) => {
+        console.error('Error fetching history data:', error);
     });
+}
+fetchHistoryData(emailRef);
 
-    // Prepare to interact with the Firebase Database
-    const currUser = JSON.parse(localStorage.getItem("currentUser")); // Retrieve current user data from local storage
-    const email = currUser.email.replace(".", "_"); // Replace '.' with '_' in email for Firebase path
-    const table = document.getElementById('usersTable'); // Get the table element
-    const tbody = document.createElement('tbody'); // Create tbody element to hold table rows
-    table.appendChild(tbody); // Append tbody to the table
-
-    // Reference to a user's walk data in Firebase Database
-    const dbRef = firebase.database().ref('/users/' + email + '/walk/');
-    const dbCurrentAngle = firebase.database().ref('angle');
-    console.log(dbCurrentAngle);
-    firebase.database().ref('/users/'+email+'/walk/' + timestamp).set({
-            angleDetails: angle
-    });
-    // Event listener for any changes in the Firebase database data
-    dbRef.on('value', function (snapshot) {
-
-        tbody.innerHTML = ''; // Clear existing table data before adding new
-
-        // Iterate through each child snapshot of the database reference
-        snapshot.forEach(function (childSnapshot) {
-            const data = childSnapshot.val(); // Retrieve the data of the child snapshot
-            const row = document.createElement('tr'); // Create a new row element for the table
-
-            // Create a cell for angle details and set its content to data.angleDetails
-            const angleCell = document.createElement('td');
-            angleCell.textContent = data.angleDetails;
-
-            // Create a cell for date and set its content to formatted timestamp
-            const dateCell = document.createElement('td');
-            dateCell.textContent = new Date(data.time).toLocaleString();
-
-            // Append angle cell and date cell to the row
-            row.appendChild(angleCell);
-            row.appendChild(dateCell);
-
-            // Append the row to the tbody
-            tbody.appendChild(row);
-        });
-    });
-});
 

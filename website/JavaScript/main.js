@@ -32,6 +32,7 @@ function saveUserOnDB() {
           email_a=email.replace(".", "_"); // Encode the email for use as a key
          firebase.database().ref('users/' + email_a).set({ // Save the user to the database
           email: email,
+          password: password,
           fullName: fullName
         }).then(() => { // If successful
           console.log('User data saved to Realtime Database successfully!');

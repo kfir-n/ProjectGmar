@@ -3,52 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>My History</title>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/watchHistory.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
         <div class="topnav">
-            <div class="logo-container"> <img src="../image/logo.png" ></div>
+            <div class="logo-container"><img src="../image/logo.png"></div>
             <a href="privateArea.html" class="private-link">
-                <i class='bx bxs-user'  alt="Anonymous Person"></i>
-          
+                <i class='bx bxs-user' alt="Anonymous Person"></i>
             </a>
             <a href="gallery.html">Gallery</a>
             <a href="register.html">Register</a>
-            <a href="login.html"> Login</a>
+            <a href="login.html">Login</a>
             <a href="contactUs.html">Contact us</a>
             <a href="HomePage.html">Home</a>
             <h1>Welcome to Knee-Care</h1>
         </div>
     </header> 
-<body>
     <h1>My History</h1>
     <table id="usersTable">
         <thead>
             <tr>
+                <th>זמן הליכה</th>
                 <th>זווית</th>
                 <th>תאריך</th>
             </tr>
-
-            <!--כאן תוצג הטבלה המלאה שמתמשת בפונקציה שיוצרת טבלה באמצעות DOM-->
         </thead>
         <tbody>
-            <!-- הנתונים יוכנסו כאן דינמית באמצעות JavaScript -->
+            <!-- Data will be inserted here by JavaScript -->
         </tbody>
     </table>
-</body>
-
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
-<script src="/JavaScript/privateArea.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+        <script src="/JavaScript/history.js"></script>
+    </body>
 </html>
-

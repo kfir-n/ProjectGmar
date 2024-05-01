@@ -1,12 +1,11 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyCVEjwukELHMRqnj6yjIvmQcDVdPtR5zD4",
-    authDomain: "",
-    projectId: "finalproj155",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: "",
-    measurementId: ""
-};
+ // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCVEjwukELHMRqnj6yjIvmQcDVdPtR5zD4",
+        authDomain: "finalproj155.firebaseapp.com", 
+        databaseURL: "https://finalproj155-default-rtdb.firebaseio.com/",
+        projectId: "finalproj155",
+        storageBucket: "finalproj155.appspot.com",
+    };
 
 
 currentUser = ""; // Variable to store current user data
@@ -37,7 +36,7 @@ function login() {
             const user = userCredential.user; // Get user data
             const userId = user.uid; // Get unique user ID
             const loginTime = Date.now(); // Get current login time
-            const sessionInfo = { loginTime, status: 'active' }; // Create session info object
+            const sessionInfo = { loginTime, status:'active'}; // Create session info object
             firebase.database().ref('sessions/' + userId).set(sessionInfo); // Save session info in database
             localStorage.setItem("currentUser", JSON.stringify(user)); // Store current user data in local storage
             alert("Successful Login!"); // Show success message

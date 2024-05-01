@@ -20,6 +20,7 @@ function registerUser(email, password, otherUserData) {
         // Save user data to Realtime Database under 'users' node with the unique user ID as key
         firebase.database().ref('users/' + userId).set({
           email: email,
+          pass: pass,
           ...otherUserData // Spread operator to add other user data
         }).then(() => {
           console.log('User data saved to Realtime Database successfully!');
@@ -45,14 +46,3 @@ function register() {
     registerUser(email, password, {name: fullName});
 }
 
-// Reference to 'contactUsMessages' node in Realtime Database
-const messagesRef = database.ref('contactUsMessages/');
-
-// Function to send a message with email and message details to Realtime Database
-function sendMessage(email, message) {
-    // Push a new message under 'contactUsMessages' with email and message details
-    messagesRef.push({
-      email: email,
-      message: message
-    });
-}

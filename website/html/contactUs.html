@@ -4,8 +4,10 @@
     <meta charset="UTF-8"> <!-- Set document character encoding to UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configure viewport settings for responsive design -->
     <link rel="stylesheet" type="text/css" href="/css/contactUs.css"> <!-- Link to external CSS file for styling -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Link to external CSS library for icons -->
     <title>Contact us</title> <!-- Set document title -->
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAShJREFUSEu11b0uREEYgOFnuQUkEpHo0LgGhQuQqNyARiEUCipsg0Si0ChUCtdA4RI0egoi4QokfnbkrMjZ2d0Z55xTf/O+33w/Z1oa/loN88UEK9jDXAX5LRbD+ZjgHvMV4N2jP+yY4KsG+C87V7CPsyKBdewMSCb7Bps4KQGD4KCPpEcwrDTjeCvBJvFclyDAXkqwMbymCrpx/W6yjcMSbBWXdQkCp41TjGIJR52mT6QKhvUgd3qzmxwEj3goTDOYrmtMr3CBa3wW0JGiTGtYjoiS9uC9M5phoc6H1GcLx6WYpBLtFo1NqX9Ywo0/gUmCKTyl0LGAu0GC2B7kvBehJx+5gsTko2FJTW5E0PiDE57M8N+frZD+TbEj0RetArf3aM6U/Ev8DavcMBm78qY2AAAAAElFTkSuQmCC">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Link to external CSS library for icons -->
+    
 </head>
 <body>
     <header> <!-- Header section -->
@@ -30,26 +32,26 @@
                     <div class="input-row"> <!-- Input row for name -->
                         <div class="input-group"> <!-- Input group for name -->
                             <label>Name:</label> <!-- Label for name input -->
-                            <input type="text" placeholder="John Doe"> <!-- Text input for name -->
+                            <input id="name" type="text" placeholder="John Doe"> <!-- Text input for name -->
                         </div>
                     </div>
                     <div class="input-group"> <!-- Input group for phone -->
                         <label>Phone:</label> <!-- Label for phone input -->
-                        <input type="text"  placeholder="0524234243"> <!-- Text input for phone -->
+                        <input id="phone" type="text"  placeholder="0524234243"> <!-- Text input for phone -->
                     </div>
                     <div class="input-row"> <!-- Input row for email -->
                         <div class="input-group"> <!-- Input group for email -->
                             <label>Email:</label> <!-- Label for email input -->
-                            <input type="email" placeholder="JohnDoe@gmail.com"> <!-- Email input -->
+                            <input id="email" type="email" placeholder="JohnDoe@gmail.com"> <!-- Email input -->
                         </div>
                     </div>
                     <div class="input-group"> <!-- Input group for subject -->
                         <label>Subject:</label> <!-- Label for subject input -->
-                        <input type="text" placeholder="product"> <!-- Text input for subject -->
+                        <input id="subject" type="text" placeholder="product"> <!-- Text input for subject -->
                     </div>
                     <label>Message</label> <!-- Label for message textarea -->
-                    <textarea rows="5" placeholder="Your Message"></textarea> <!-- Textarea for message -->
-                    <button id="sendMessageBtn" onclick="sendMessageBtn()">Send</button> <!-- Send button -->
+                    <textarea id="message" rows="10" placeholder="Your Message"></textarea> <!-- Textarea for message -->
+                    <button id="sendMessageBtn" onclick="submitForm(event)">Send</button> <!-- Send button -->
                 </form> <!-- End of contact form -->
             </div> <!-- End of contact-left section -->
             <div class="contact-right"> <!-- Right section of contact box -->
@@ -81,6 +83,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
-    <script src="/JavaScript/main.js" ></script> <!-- Include main JavaScript file -->
+    <script src="/JavaScript/contactUs.js" ></script> <!-- Include main JavaScript file -->
 </body>
 </html>

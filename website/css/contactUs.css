@@ -141,7 +141,7 @@
  }
 
  .contact-right {
-    font-size: 24px; /* Set font size */
+    font-size: 24px; 
     color: #fff; /* Set text color */
     flex-basis: 40%; /* Set flex basis */
     padding: 40px; /* Set padding */
@@ -223,6 +223,7 @@ button {
    font-size: 24px; /* Set font size */
 }
  .contact-left h3 {
+    text-align: center;
     color: #2e95f0; /* Set color */
     font-weight: 600; /* Set font weight */
     font-size: 50px; /* Set font size */
@@ -230,6 +231,7 @@ button {
  }
 
  .contact-right h3 {
+    text-align: center;
     font-size: 45px; /* Set font size */
     font-weight: 600; /* Set font weight */
     margin-bottom: 30px; /* Set bottom margin */
