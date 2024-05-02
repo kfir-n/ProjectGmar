@@ -61,55 +61,75 @@ function formatDate(milliseconds) {
 
     return formattedDate;
 }
-
+let i =0;
 function fetchHistoryData(email) {
     const database = firebase.database();
     const normalizedEmail = email.replace('.', '_');
     const userWalksRef = database.ref('users/' + normalizedEmail + '/walk');
-    userWalksRef.once('value', (snapshot) => {
+    userWalksRef.orderByKey().limitToFirst(2).once('value', (snapshot) => {
         const walks = snapshot.val();
-        console.log(walks);
+        const keys = Object.keys(walks);
+        if (keys.length < 2) {
+            console.log("Not enough data to compare two timestamps.");
+            return; // Exit if there aren't at least two entries to compare
+        }
 
-       
+        const firstKey = Object.keys(walks)[i];
+        // Access the first two walk entries
+        const firstWalkEntry = walks[keys[0]];
+        const secondWalkEntry = firstKey;
+
+
+        // Calculate the difference between the two timestamps
+        const timeDifference = calculateDateDifference(firstWalkEntry.time, secondWalkEntry.time);
+
+        // Logging or handling the time difference
+        console.log("Time difference between the first two entries:", timeDifference);
+
         const tableBody = document.getElementById('usersTable').querySelector('tbody');
-        tableBody.innerHTML = '';  // Clear existing data
-        
-        Object.entries(walks || {}).forEach(([key, walkEntry]) => {
-            console.log(walks);
-            let i =0;
+        tableBody.innerHTML = ''; // Clear existing data
+        // Assuming we are just going to display these two for simplicity
+        [firstWalkEntry, secondWalkEntry].forEach((entry, index) => {
             const row = tableBody.insertRow();
-            const angleCell = row.insertCell(0);
-            const timeCell = row.insertCell(1);
-            const totalWalk = row.insertCell(0);
-            angleCell.textContent = walkEntry.angleDetails;
-            const firstKey = Object.keys(walks)[i];
-            console.log("walkent"+walkEntry.time);
-            console.log("firstkey" +firstKey);
-            timeCell.textContent = formatTime(walkEntry.time);//new Date(parseInt(walkEntry.time)).toLocaleString();
-            totalWalk.textContent = walkEntry.time.toString()-Date.now();
-             const durationMilliseconds =  walkEntry.time - firstKey;
-             const seconds = Math.floor((durationMilliseconds / 1000) % 60);
-             const minutes = Math.floor((durationMilliseconds / (1000 * 60)) % 60);
-             const hours = Math.floor((durationMilliseconds / (1000 * 60 * 60)) % 24);
-            // totalWalk.textContent = walkEntry.tostring();
-             const formattedTime = [
-                hours.toString().padStart(2, '0'),
-                minutes.toString().padStart(2, '0'),
-                seconds.toString().padStart(2, '0')
-            ].join(':');
-        
-            // totalWalk.textContent = walkEntry.time.toString();
-            console.log(formatMillisecondsToDate(new Date(parseInt(walkEntry.time)).toLocaleString()));
-            totalWalk.textContent = formattedTime; 
+            const dateCell = row.insertCell(0);
+            const angleCell = row.insertCell(1);
+            const timeStampCell = row.insertCell(2);
+
+            const formattedTimestamp = formatDate(entry.time);
+
+            dateCell.textContent = keys[index].slice(0,10); // Assuming the key contains the date
+            angleCell.textContent = entry.angle;
+            timeStampCell.textContent = formattedTimestamp;
         });
-        i++;
-        totalWalk.textContent = 0;
+        
     }).catch((error) => {
         console.error('Error fetching history data:', error);
     });
 }
 
-function formatMillisecondsToDate(milliseconds) {
-    return new Date(milliseconds).toLocaleString();
+// Make sure these helper functions are correctly defined in your script
+function calculateDateDifference(dateString1, dateString2) {
+    const date1 = parseCustomDate(dateString1);
+    const date2 = parseCustomDate(dateString2);
+
+    const diffMilliseconds = Math.abs(date1 - date2);
+    return {
+        milliseconds: diffMilliseconds,
+        seconds: diffMilliseconds / 1000,
+        minutes: diffMilliseconds / 1000 / 60,
+        hours: diffMilliseconds / 1000 / 60 / 60
+    };
 }
 
+function parseCustomDate(dateString) {
+    const parts = dateString.split(/[- :]/);
+    const day = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10) - 1;
+    const year = parseInt(parts[2], 10);
+    const hours = parseInt(parts[3], 10);
+    const minutes = parseInt(parts[4], 10);
+    const seconds = parseInt(parts[5], 10);
+    const milliseconds = parseInt(parts[6], 10);
+
+    return new Date(year, month, day, hours, minutes, seconds, milliseconds);
+}
