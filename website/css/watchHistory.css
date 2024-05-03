@@ -150,4 +150,35 @@ td {
 th {
   color: black;
 }
+button{
+  font-size: 50px;
+  position: absolute; /* Position the button absolutely */
+  top: 50%; /* Align the button to the vertical center */
+  left: 50%; /* Align the button to the horizontal center */
+  transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
+  height: 95px; /* Set height of the button */
+  width: 500px; /* Set width of the button */
+  background: white; /* Set background color of the button */
+  border-radius: 55px; /* Set border-radius for the button */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
+  cursor: pointer; /* Set cursor style to pointer */
+  overflow: hidden; /* Hide overflow content */
+  margin-top: 500px; /* Add top margin to the button */
+}
 
+ /* Change button style on hover */
+ button:hover {
+  position: absolute; /* Position the button absolutely */
+  top: 50%; /* Align the button to the vertical center */
+  left: 50%; /* Align the button to the horizontal center */
+  transform: translate(-50%, -50%); /* Center the button horizontally and vertically */
+  height: 95px; /* Set height of the button */
+  width: 500px; /* Set width of the button */
+  transition: 1.5s; /* Add transition effect */
+  background: rgb(86, 201, 57); /* Change background color on hover */
+  border-radius: 55px; /* Set border-radius for the button */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow to the button */
+  cursor: pointer; /* Set cursor style to pointer */
+  overflow: hidden; /* Hide overflow content */
+  margin-top: 500px; /* Add top margin to the button */
+}

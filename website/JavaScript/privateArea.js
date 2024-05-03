@@ -66,9 +66,8 @@ button1.addEventListener("click", () => {
         
         button1.classList.add("active");
         var user = firebase.auth().currentUser;
-        let timestamp = formatDate(Date.now()); // Get current timestamp //Lena
-        
-        console.log("1:"+timestamp);
+        let timestamp = getCurrentTimeMillis(); // Get current timestamp
+        console.log(timestamp);
 
         // Set data in Firebase
         firebase.database().ref('/users/'+email+'/walk/' + timestamp).set({
@@ -95,7 +94,7 @@ button2.addEventListener("click", () => {
             // Retrieve the last angle value from Firebase
             database.ref('angle').once('value').then(function(snapshot) {
                 var angleValue = snapshot.val();
-                let CurrTimeStamp =  formatDate(Date.now()); // Get current timestamp
+                let CurrTimeStamp = getCurrentTimeMillis(); // Get current timestamp
                 
                 // Update the angleDetails with the retrieved angle value
                 timestampRef.set(CurrTimeStamp);
@@ -119,26 +118,13 @@ button2.addEventListener("click", () => {
 
 
 
--
-// convert to date
-function formatTime(milliseconds) {
-    // Create a new Date object with the provided milliseconds
-    const date = new Date(milliseconds);
-    
-    // Extract date components
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // January is 0
-    const year = date.getFullYear();
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-    const seconds = String(date.getSeconds()).padStart(2, '0');
-    const millisecondsFormatted = String(date.getMilliseconds()).padStart(3, '0');
-
-    // Construct the formatted date string
-    const formattedDate = `${hours}:${minutes}:${seconds}:${millisecondsFormatted}`;
-
-    return formattedDate;
+function getCurrentTimeMillis() {
+    return Date.now(); // Get current timestamp in milliseconds
 }
+
+
+
+
 
 // Function for user logout
 function logout() {
@@ -197,7 +183,7 @@ function fetchHistoryData(email) {
                 const timeCell = row.insertCell(1);
                 
                 angleCell.textContent = walkEntry.angleDetails;
-                timeCell.textContent =  formatTime(Date.now()); //new Date(parseInt(walkEntry.time)).toLocaleString(); //Lena
+                timeCell.textContent = new Date(parseInt(walkEntry.time)).toLocaleString();
             }
         }
     }).catch((error) => {
@@ -206,22 +192,3 @@ function fetchHistoryData(email) {
 }
 fetchHistoryData(emailRef);
 
-
-function formatDate(milliseconds) {
-    // Create a new Date object with the provided milliseconds
-    const date = new Date(milliseconds);
-    
-    // Extract date components
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // January is 0
-    const year = date.getFullYear();
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-    const seconds = String(date.getSeconds()).padStart(2, '0');
-    const millisecondsFormatted = String(date.getMilliseconds()).padStart(3, '0');
-
-    // Construct the formatted date string
-    const formattedDate = `${day}-${month}-${year} ${hours}:${minutes}:${seconds}:${millisecondsFormatted}`;
-
-    return formattedDate;
-}
